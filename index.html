@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Word Giggles</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden; /* optional: hide scrollbars of parent page */
+    }
+.iframe-container {
+  position: relative;
+  width: 100%;   /* visible width */
+  height: 100%;  /* visible height */
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: -5px;                        /* crop 5px from top */
+  left: -10px;                       /* crop 10px from left */
+  width: calc(100% + 20px);          /* extra 20px => 10px cropped on right */
+  height: calc(100% + 5px);         /* 5px top + 5px bottom, tweak as needed */
+  border: none;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="iframe-container">
+    <iframe src="https://word-giggles.streamlit.app/?embed=true" title="Full screen iframe"></iframe>
+  </div>
+</body>
+</html>
