@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Word Giggles</title>
-  <link rel="icon" href="logo.png">
 
-  <!-- Mobile redirect -->
-  <script>
-    (function () {
-      const isMobile =
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
-          .test(navigator.userAgent);
+<script>
+(function () {
+  const ua = navigator.userAgent || navigator.vendor || window.opera;
+  const isMobile =
+    /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i
+      .test(ua.toLowerCase());
 
-      if (isMobile) {
-        window.location.replace("https://word-giggles.streamlit.app/");
-      }
-    })();
-  </script>
+  if (isMobile) {
+    location.replace("https://word-giggles.streamlit.app/");
+  }
+})();
+</script>
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
+<meta charset="UTF-8">
+<title>Word Giggles</title>
+<link rel="icon" href="logo.png">
 
-    .iframe-container {
-      width: 100%;
-      height: 100dvh;
-      overflow: hidden;
-    }
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
 
-    .iframe-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+.iframe-container {
+  width: 100%;
+  height: 100dvh;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+</style>
+
 </head>
-
 <body>
-  <div class="iframe-container">
-    <iframe
-      src="https://word-giggles.streamlit.app/?embed=true"
-      title="Word Giggles">
-    </iframe>
-  </div>
+
+<div class="iframe-container">
+  <iframe src="https://word-giggles.streamlit.app/?embed=true"></iframe>
+</div>
+
 </body>
 </html>
-
