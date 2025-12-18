@@ -3,9 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Word Giggles</title>
-  <link rel="icon" type="image/png" href="logo.png">
-  <style>
+  <link rel="icon" href="logo.png">
 
+  <!-- Mobile redirect -->
+  <script>
+    (function () {
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+          .test(navigator.userAgent);
+
+      if (isMobile) {
+        window.location.replace("https://word-giggles.streamlit.app/");
+      }
+    })();
+  </script>
+
+  <style>
     html, body {
       margin: 0;
       padding: 0;
@@ -15,7 +28,7 @@
 
     .iframe-container {
       width: 100%;
-      height: 100dvh; /* 🔥 FIX: mobile-safe viewport */
+      height: 100dvh;
       overflow: hidden;
     }
 
@@ -23,29 +36,17 @@
       width: 100%;
       height: 100%;
       border: none;
-
-      /* cropping without reflow */
-      transform: translate(-10px, -5px) scale(1.02);
-      transform-origin: top left;
     }
-
-    /* fallback for older mobile browsers */
-    @supports not (height: 100dvh) {
-      .iframe-container {
-        height: 100vh;
-      }
-    }
-
   </style>
 </head>
-<body>
 
+<body>
   <div class="iframe-container">
     <iframe
       src="https://word-giggles.streamlit.app/?embed=true"
       title="Word Giggles">
     </iframe>
   </div>
-
 </body>
 </html>
+
